@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pho Delight</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #fdfdf6;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 10px 20px;
+        }
+
+        .navbar a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 14px;
+        }
+
+        .navbar .logo {
+            font-weight: bold;
+            font-size: 24px;
+            color: #008080;
+        }
+
+        .navbar a:hover {
+            color: #008080;
+        }
+
+        /* Main Content */
+        .content {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .content h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .product {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            text-align: center;
+            background-color: #fff;
+        }
+
+        .product img {
+            width: 100%;
+            height: 200px; /* 모든 이미지 높이를 동일하게 설정 */
+            object-fit: cover; /* 비율을 유지하며 크기 조정 */
+        }
+
+        .product h3 {
+            font-size: 16px;
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        .product p {
+            color: #008080;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer a {
+            color: #008080;
+            text-decoration: none;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navbar a {
+                margin: 10px 0;
+            }
+
+            .content h2 {
+                font-size: 20px;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .product img {
+                height: 150px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar {
+                padding: 10px;
+            }
+
+            .navbar a {
+                font-size: 12px;
+            }
+
+            .content {
+                padding: 0 10px;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .product img {
+                height: 120px;
+            }
+
+            .content h2 {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="navbar">
+            <a href="index.html" class="logo">Pho Delight</a>
+            <nav>
+                <a href="one.html">쌀국수</a>
+                <a href="two.html">사이드</a>
+                <a href="three.html">이벤트</a>
+                <a href="four.html">가게 리뷰</a>
+                <a href="five.html">가게 정보</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="content">
+        <h2>쌀국수</h2>
+        <div class="product-grid">
+            <div class="product">
+                <img src="소고기.png" alt="소고기 쌀국수">
+                <h3>소고기 쌀국수</h3>
+                <p>10,000원</p>
+            </div>
+            <div class="product">
+                <img src="짬뽕쌀국수.png" alt="짬뽕쌀국수">
+                <h3>짬뽕쌀국수</h3>
+                <p>11,000원</p>
+            </div>
+            <div class="product">
+                <img src="차돌.png" alt="차돌쌀국수">
+                <h3>차돌쌀국수</h3>
+                <p>11,500원</p>
+            </div>
+            <div class="product">
+                <img src="닭 반마리.png" alt="닭 반마리 쌀국수">
+                <h3>닭 반마리 쌀국수</h3>
+                <p>12,000원</p>
+            </div>
+            <div class="product">
+                <img src="얼큰 소고기 모둠.png" alt="얼큰 소고기 모둠">
+                <h3>얼큰 소고기 모둠 쌀국수</h3>
+                <p>9,500원</p>
+            </div>
+            <div class="product">
+                <img src="얼큰 곱창.png" alt="얼큰 곱창">
+                <h3>얼큰 곱창 쌀국수</h3>
+                <p>12,500원</p>
+            </div>
+            <div class="product">
+                <img src="양지머리 쌀국수.png" alt="양지머리 쌀국수">
+                <h3>양지머리 쌀국수</h3>
+                <p>13,000원</p>
+            </div>
+            <div class="product">
+                <img src="곱창 북부 사파.png" alt="곱창 북부 사파">
+                <h3>곱창 북부 사파 쌀국수</h3>
+                <p>11,500원</p>
+            </div>
+            <div class="product">
+                <img src="베트남 북부 사파.png" alt="베트남 북부 사파">
+                <h3>베트남 북부 사파 쌀국수</h3>
+                <p>10,500원</p>
+            </div>
+            <div class="product">
+                <img src="매운 닭 반마리.png" alt="매운 닭 반마리">
+                <h3>매운 닭 반마리 쌀국수</h3>
+                <p>13,500원</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>고객센터: 010-1234-5678 | © 2024 Pho Delight</p>
+    </footer>
+</body>
+</html>

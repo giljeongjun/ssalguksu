@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>리뷰 페이지</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #fdfdf6;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 10px 20px;
+        }
+
+        .navbar a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 14px;
+        }
+
+        .navbar .logo {
+            font-weight: bold;
+            font-size: 24px;
+            color: #008080;
+        }
+
+        .navbar a:hover {
+            color: #008080;
+        }
+
+        /* Main Content */
+        .content {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .title {
+            font-size: 36px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #000000;
+        }
+
+        .review-intro {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .review-intro p {
+            font-size: 24px;
+            font-weight: bold;
+            color: #008080;
+        }
+
+        .review-form {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .review-form h3 {
+            margin-bottom: 10px;
+            color: #008080;
+        }
+
+        .review-form input,
+        .review-form textarea {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .review-form button {
+            background-color: #008080;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .review-form button:hover {
+            background-color: #005f5f;
+        }
+
+        .review {
+            display: flex;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            margin: 8px auto; /* Reduced top/bottom spacing */
+            max-width: 1000px; /* Adjusted max width */
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .review-text {
+            flex: 1;
+            margin-right: 15px; /* Adjusted gap between text and photo */
+        }
+
+        .review-photo {
+            width: 150px; /* Reduced photo width */
+            height: 100px; /* Reduced photo height */
+            object-fit: cover; /* Maintain aspect ratio and avoid stretching */
+            border-radius: 5px;
+        }
+
+        .review h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: #020404;
+        }
+
+        .rating {
+            color: #ffcc00;
+            font-size: 16px;
+        }
+
+        .review p {
+            font-size: 14px;
+            color: #555;
+            margin-top: 5px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #008080;
+            text-decoration: none;
+        }
+
+        /* Media Queries for Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navbar a {
+                margin: 10px 0;
+                font-size: 16px;
+            }
+
+            .review {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .review-photo {
+                width: 100%;
+                height: auto;
+                margin-top: 10px;
+            }
+
+            .content {
+                padding: 0 10px;
+            }
+
+            .review-intro p {
+                font-size: 20px;
+            }
+
+            .review-form input,
+            .review-form textarea {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .title {
+                font-size: 28px;
+            }
+
+            .review-intro p {
+                font-size: 18px;
+            }
+
+            .review-form input,
+            .review-form textarea {
+                font-size: 14px;
+            }
+
+            .review h3 {
+                font-size: 16px;
+            }
+
+            .rating {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="navbar">
+            <a href="index.html" class="logo">Pho Delight</a>
+            <nav>
+                <a href="one.html">쌀국수</a>
+                <a href="two.html">사이드</a>
+                <a href="three.html">이벤트</a>
+                <a href="four.html">가게 리뷰</a>
+                <a href="five.html">가게 정보</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="content">
+        <div class="title">고객 리뷰</div>
+
+        <!-- Review Intro -->
+        <div class="review-intro">
+            <p>
+                별점으로 증명된 쌀국수 맛! <br>우리 매장 고객님들의 생생한 리뷰를 만나보세요.
+            </p>
+        </div>
+
+        <!-- Review Form -->
+        <div class="review-form">
+            <h3>리뷰 작성</h3>
+            <input type="text" placeholder="이름" id="name">
+            <textarea placeholder="리뷰를 작성해 주세요" id="review-text"></textarea>
+            <button>제출</button>
+        </div>
+
+        <!-- Review Cards -->
+        <div class="review">
+            <div class="review-text">
+                <h3>이태형 <span class="rating">★★★★☆</span></h3>
+                <p>맛있고 친절한 서비스에 정말 만족했어요! 자주 방문할 것 같아요.</p>
+            </div>
+            <img src="1.png" alt="음식 사진" class="review-photo">
+        </div>
+        <div class="review">
+            <div class="review-text">
+                <h3>이수현 <span class="rating">★★★★★</span></h3>
+                <p>쌀국수가 정말 맛있었어요. 국물도 진하고 고기 질도 좋네요.</p>
+            </div>
+            <img src="2.png" alt="음식 사진" class="review-photo">
+        </div>
+        <div class="review">
+            <div class="review-text">
+                <h3>권혁민 <span class="rating">★★★☆☆</span></h3>
+                <p>가격 대비 퀄리티가 훌륭합니다. 추천해요!</p>
+            </div>
+            <img src="3.png" alt="음식 사진" class="review-photo">
+        </div>
+        <div class="review">
+            <div class="review-text">
+                <h3>이나린 <span class="rating">★★★★☆</span></h3>
+                <p>기모찌</p>
+            </div>
+            <img src="4.png" alt="음식 사진" class="review-photo">
+        </div>
+        <div class="review">
+            <div class="review-text">
+                <h3>김연우 <span class="rating">★★★★★</span></h3>
+                <p>이곳의 쌀국수는 다른 곳과 비교할 수 없을 만큼 맛있어요.</p>
+            </div>
+            <img src="5.png" alt="음식 사진" class="review-photo">
+        </div>
+        <div class="review">
+            <div class="review-text">
+                <h3>이건우 <span class="rating">★★★★☆</span></h3>
+                <p>국물 맛이 깊고 정말 좋습니다. 가성비 최고!</p>
+            </div>
+            <img src="6.png" alt="음식 사진" class="review-photo">
+        </div>
+        <div class="review">
+            <div class="review-text">
+                <h3>함윤서 <span class="rating">★★★☆☆</span></h3>
+                <p>깔끔한 맛이 좋고, 분위기도 마음에 들어요. 만족합니다.</p>
+            </div>
+            <img src="7.png" alt="음식 사진" class="review-photo">
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>고객센터: 010-1234-5678 | &copy; 2024 Pho Delight. All rights reserved.</p>
+    </footer>
+</body>
+</html>

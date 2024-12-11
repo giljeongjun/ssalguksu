@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가게 정보</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #fdfdf6;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 10px 20px;
+        }
+
+        .navbar a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 14px;
+        }
+
+        .navbar .logo {
+            font-weight: bold;
+            font-size: 24px;
+            color: #008080;
+        }
+
+        .navbar a:hover {
+            color: #008080;
+        }
+
+        /* Main Content */
+        .content {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .content h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: left;
+            color: #0d1313;
+        }
+
+        .info-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .info-card {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: left;
+        }
+
+        .info-card img {
+            max-width: 100%;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .info-card h3 {
+            color: #008080;
+            margin-bottom: 10px;
+        }
+
+        .info-card p, .info-card ul {
+            margin-bottom: 10px;
+        }
+
+        .info-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-card ul li {
+            margin-bottom: 5px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #008080;
+            text-decoration: none;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navbar a {
+                margin: 10px 0;
+                font-size: 16px;
+            }
+
+            .info-section {
+                grid-template-columns: 1fr;
+            }
+
+            .content h2 {
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar .logo {
+                font-size: 20px;
+            }
+
+            .info-card {
+                padding: 15px;
+            }
+
+            .info-card h3 {
+                font-size: 18px;
+            }
+
+            .info-card p, .info-card ul li {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="navbar">
+            <a href="index.html" class="logo">Pho Delight</a>
+            <nav>
+                <a href="one.html">쌀국수</a>
+                <a href="two.html">사이드</a>
+                <a href="three.html">이벤트</a>
+                <a href="four.html">가게 리뷰</a>
+                <a href="five.html">가게 정보</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="content">
+        <h2>가게 정보</h2>
+        <div class="info-section">
+            <div class="info-card">
+                <h3>가게 소개</h3>
+                <img src="가게.jpg" alt="가게 이미지">
+                <p>Pho Delight는 신선한 재료와 정성으로 만든 정통 베트남 쌀국수를 제공하고 있습니다. 오랜 전통을 자랑하고 있으며 고객 여러분의 건강과 행복을 위해 항상 최선을 다 하겠습니다.</p>
+            </div>
+            <div class="info-card">
+                <h3>위치</h3>
+                <p>경기도 안양시 동안구 평촌동 138-6</p>
+                <iframe src="https://maps.google.com/maps?q=경기도%20안양시%20동안구%20평촌동%20138-6&output=embed" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <div class="info-card">
+                <h3>운영 시간</h3>
+                <ul>
+                    <li>월요일 - 금요일: 10:00 - 22:00</li>
+                    <li>토요일: 11:00 - 23:00</li>
+                    <li>일요일: 휴무</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>연락처</h3>
+                <p>전화: 010-1234-5678</p>
+                <p>이메일: info@phodelight.com</p>
+            </div>
+            <div class="info-card">
+                <h3>특별 혜택</h3>
+                <p>단골 고객을 위한 포인트 카드 제공 및 생일 혜택이 있습니다. 더 많은 정보는 가게에 방문하시거나 문의해 주세요!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>고객센터: 010-1234-5678 | © 2024 Pho Delight</p>
+    </footer>
+</body>
+</html>
